@@ -17,12 +17,4 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- Extras example -->
-  <url>
-    <loc>https://bramha1997.github.io/about</loc>
-    <lastmod>2024-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
 </urlset>
