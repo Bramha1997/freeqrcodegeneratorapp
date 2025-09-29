@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Free Online QR Code Generator App | Stylish QR Codes with Logo</title>
+  <meta name="description"
+    content="Generate free QR codes online with our powerful QR Code Generator App. Customize colors, add a logo, choose stylish themes, and download in PNG or SVG format. Perfect for business, marketing, and fun!">
+  <meta name="keywords"
+    content="QR Code Generator, Free QR Tool, Create QR Code, QR Code with Logo, Stylish QR Generator, Download QR PNG SVG, Custom QR code online">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://yourdomain.com/qr-code-generator">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free QR Code Generator App | Create QR Codes Online">
+  <meta property="og:description"
+    content="Make free stylish custom QR codes with logo, colors, and themes. Export PNG, download SVG, fully scannable & SEO optimized QR app.">
+  <meta property="og:image" content="https://yourdomain.com/static/preview-qr.png">
+  <meta property="og:url" content="https://yourdomain.com/qr-code-generator">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free QR Code Generator App">
+  <meta name="twitter:description"
+    content="The best free QR Code Generator App: customize and download your stylish QR code with logo instantly.">
+  <meta name="twitter:image" content="https://yourdomain.com/static/preview-qr.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Free QR Code Generator App",
+    "operatingSystem": "Web",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free online QR Code Generator app. Customize QR codes with logos, themes, and style. Supports PNG and SVG downloads for business and fun.",
+    "url": "https://yourdomain.com/qr-code-generator"
+  }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .app {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      width: 480px;
+      max-width: 95vw;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      margin: 0 0 .5rem;
+      color: #0072ff;
+      font-size: 1.6rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin: 0.8rem 0 0.3rem;
+      color: #444;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #555;
+      text-align: left;
+    }
+
+    input,
+    select,
+    .control {
+      width: 100%;
+      padding: .6rem;
+      border-radius: .4rem;
+      border: 1px solid #ccc;
+      margin-top: .4rem;
+      font-size: 1rem;
+      background: #fafafa;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: .6rem;
+      width: 100%;
+      padding: .7rem;
+      border-radius: .5rem;
+      border: none;
+      font-size: .95rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+    }
+
+    #generate-btn {
+      background: #ffcc00;
+    }
+
+    #generate-btn:hover {
+      background: #e6b800;
+    }
+
+    #download-png {
+      background: #4CAF50;
+      color: #fff;
+    }
+
+    #download-png:hover {
+      background: #45a049;
+    }
+
+    #download-svg {
+      background: #2196F3;
+      color: #fff;
+    }
+
+    #download-svg:hover {
+      background: #1976D2;
+    }
+
+    #theme-btn {
+      background: #ff66cc;
+      color: #fff;
+    }
+
+    #theme-btn:hover {
+      background: #e055b8;
+    }
+
+    #qr-code {
+      margin: 1rem auto;
+      padding: 4px;
+      /* ⬅️ reduced from 10px */
+      background: #f7f7f7;
+      border-radius: 0.3rem;
+      /* slightly tighter corner */
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .flex {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .flex label {
+      flex: 1;
+      font-size: .8rem;
+    }
+
+    .flex input[type=color] {
+      width: 100%;
+      height: 40px;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .presets {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .5rem;
+    }
+
+    .presets button {
+      font-size: 0.85rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: .8rem;
+      color: #777;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <header>
+      <h1><i class="fa-solid fa-qrcode"></i> Free Online QR Code Generator App</h1>
+      <p><strong>Create customizable QR codes instantly.</strong> Add logo, pick colors, choose themes, export PNG or
+        SVG — free and easy.</p>
+    </header>
+
+    <!-- Input -->
+    <section>
+      <h2><i class="fa-solid fa-link"></i> Text / URL</h2>
+      <input id="qr-input" type="text" class="control" placeholder="Enter text or URL..." value="https://example.com">
+    </section>
+
+    <!-- QR Settings -->
+    <section>
+      <h2><i class="fa-solid fa-gear"></i> QR Settings</h2>
+      <select id="qr-size" class="control">
+        <option value="200">200 px</option>
+        <option value="250">250 px</option>
+        <option value="300" selected>300 px</option>
+        <option value="400">400 px</option>
+      </select>
+      <select id="dot-style" class="control">
+        <option value="square">Square Dots</option>
+        <option value="rounded">Rounded Dots</option>
+        <option value="dots">Circle Dots</option>
+      </select>
+      <select id="error-correction" class="control">
+        <option value="L">Error L (7%)</option>
+        <option value="M" selected>Error M (15%)</option>
+        <option value="Q">Error Q (25%)</option>
+        <option value="H">Error H (30%)</option>
+      </select>
+    </section>
+
+    <!-- Colors -->
+    <section>
+      <h2><i class="fa-solid fa-palette"></i> Colors</h2>
+      <div class="flex">
+        <label>Dark <input type="color" id="color-dark" value="#000000"></label>
+        <label>Light <input type="color" id="color-light" value="#ffffff"></label>
+      </div>
+    </section>
+
+    <!-- Logo -->
+    <section>
+      <h2><i class="fa-solid fa-image"></i> Logo</h2>
+      <input type="file" id="logo-input" class="control" accept="image/*">
+      <select id="logo-shape" class="control">
+        <option value="square" selected>Square Logo</option>
+        <option value="rounded">Rounded Corners</option>
+        <option value="circle">Circle</option>
+      </select>
+      <label for="logo-size" style="display:flex;align-items:center;gap:.4rem;margin-top:.5rem;">
+        <i class="fa-solid fa-up-right-and-down-left-from-center"></i> Logo Size
+      </label>
+      <input type="range" id="logo-size" class="control" min="10" max="40" value="25">
+    </section>
+
+    <!-- Actions -->
+    <section>
+      <button id="generate-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate QR</button>
+      <button id="theme-btn"><i class="fa-solid fa-shuffle"></i> Random Theme</button>
+      <div class="presets">
+        <button id="preset-neon">🌈 Neon</button>
+        <button id="preset-pastel">🍭 Pastel</button>
+        <button id="preset-corp">🏢 Corporate</button>
+        <button id="preset-dark">🌙 Dark</button>
+      </div>
+    </section>
+
+    <!-- Preview -->
+    <section>
+      <h2><i class="fa-solid fa-eye"></i> Preview</h2>
+      <div id="qr-code" aria-label="Preview of generated QR Code"></div>
+    </section>
+
+    <!-- Download -->
+    <section>
+      <h2><i class="fa-solid fa-download"></i> Download</h2>
+      <button id="download-png"><i class="fa-solid fa-file-image"></i> Download PNG</button>
+      <button id="download-svg"><i class="fa-solid fa-file-code"></i> Download SVG</button>
+    </section>
+
+    <!-- FAQ -->
+    <footer>
+      <h2><i class="fa-solid fa-circle-question"></i> FAQ</h2>
+      <p><strong>Q: Is this QR Code Generator free?</strong><br>A: Yes, 100% free to use forever.</p>
+      <p><strong>Q: Can I add logos?</strong><br>A: Indeed, upload any logo and choose square, rounded, or circle
+        styles.</p>
+      <p><strong>Q: Can I download QR in SVG?</strong><br>A: Yes, perfect for printing at any size.</p>
+      <p><strong>Q: Is it mobile-friendly?</strong><br>A: Yes, generate and save QR codes directly from your phone.</p>
+      <p style="margin-top:1rem;">© 2024 Free Online QR Code Generator App</p>
+    </footer><!-- SEO Blog Section -->
+
+    <article style="margin-top:2rem; text-align:left;">
+      <h2>📌 Why Use Our Free Online QR Code Generator?</h2>
+      <p>
+        QR codes have become an essential tool for businesses, marketers, teachers, and even individuals.
+        With our <strong>Free Online QR Code Generator App</strong>, you can easily create QR codes for websites,
+        business cards, menus, Wi‑Fi logins, or social media profiles — all in a matter of seconds.
+      </p>
+
+      <h3>✨ Key Benefits of QR Codes</h3>
+      <ul>
+        <li><strong>Instant Access:</strong> Scan and open links without typing.</li>
+        <li><strong>Contactless:</strong> Perfect for menus, payments, and events.</li>
+        <li><strong>Customizable:</strong> Add logos, choose colors, and match your brand.</li>
+        <li><strong>Multi‑purpose:</strong> Share files, app downloads, email addresses, locations, and more.</li>
+      </ul>
+
+      <h3>💡 Why Our QR Code Generator App Stands Out</h3>
+      <p>
+        Unlike simple static tools, our <strong>QR Code Generator with Logo</strong> lets you fully customize your QR
+        design:
+      </p>
+      <ul>
+        <li>🎨 Choose from <strong>square, rounded, or circular dots</strong></li>
+        <li>🖼️ Add your <strong>brand logo</strong> in square, rounded, or circle style</li>
+        <li>🌈 Apply <strong>preset themes</strong> like Neon, Pastel, Corporate, or Dark Mode</li>
+        <li>⬇️ Download <strong>high‑resolution PNG</strong> or scalable <strong>SVG</strong> files</li>
+        <li>📱 Works perfectly on <strong>desktop & mobile browsers</strong></li>
+      </ul>
+
+      <h3>🚀 How to Use the QR Code Generator</h3>
+      <ol>
+        <li>Enter your text or URL in the input field above.</li>
+        <li>Customize colors, dot style, and error correction level.</li>
+        <li>Upload your business or personal logo if required.</li>
+        <li>Click <strong>Generate QR</strong> and preview instantly.</li>
+        <li>Download your custom QR in <strong>PNG or SVG</strong> format.</li>
+      </ol>
+    </article>
+  </main>
+
+  <!-- QR Code Script -->
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling/lib/qr-code-styling.js"></script>
+  <script>
+    const input = document.getElementById("qr-input"),
+      sizeSelector = document.getElementById("qr-size"),
+      dotStyle = document.getElementById("dot-style"),
+      darkColor = document.getElementById("color-dark"),
+      lightColor = document.getElementById("color-light"),
+      logoInput = document.getElementById("logo-input"),
+      logoShape = document.getElementById("logo-shape"),
+      logoSizeSlider = document.getElementById("logo-size"),
+      errorCorrection = document.getElementById("error-correction");
+
+    const qrCode = new QRCodeStyling({
+      width: 300, height: 300, data: input.value,
+      margin: 20,
+      qrOptions: { errorCorrectionLevel: "M" },
+      dotsOptions: { color: "#000", type: "square" },
+      backgroundOptions: { color: "#fff" },
+      imageOptions: { crossOrigin: "anonymous", margin: 0 }
+    });
+    qrCode.append(document.getElementById("qr-code"));
+    let logoImage = null;
+
+    function updateQRCode() {
+      qrCode.update({
+        width: +sizeSelector.value,
+        height: +sizeSelector.value,
+        data: input.value,
+        margin: 20,
+        qrOptions: { errorCorrectionLevel: errorCorrection.value },
+        dotsOptions: { color: darkColor.value, type: dotStyle.value },
+        backgroundOptions: { color: lightColor.value },
+        image: logoImage,
+        imageOptions: { crossOrigin: "anonymous", hideBackgroundDots: true, margin: 0, imageSize: +logoSizeSlider.value / 100 }
+      });
+    }
+    function applyLogoMask() {
+      if (!logoImage) return;
+      const img = new Image();
+      img.onload = () => {
+        const size = 200, can = document.createElement("canvas"), ctx = can.getContext("2d");
+        can.width = can.height = size; ctx.save();
+        if (logoShape.value === "circle") { ctx.beginPath(); ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2); ctx.clip(); }
+        else if (logoShape.value === "rounded") {
+          const r = size * 0.25;
+          ctx.beginPath();
+          ctx.moveTo(r, 0); ctx.lineTo(size - r, 0); ctx.quadraticCurveTo(size, 0, size, r);
+          ctx.lineTo(size, size - r); ctx.quadraticCurveTo(size, size, size - r, size);
+          ctx.lineTo(r, size); ctx.quadraticCurveTo(0, size, 0, size - r);
+          ctx.lineTo(0, r); ctx.quadraticCurveTo(0, 0, r, 0); ctx.closePath(); ctx.clip();
+        }
+        ctx.drawImage(img, 0, 0, size, size); ctx.restore();
+        logoImage = can.toDataURL(); updateQRCode();
+      }; img.src = logoImage;
+    }
+
+    [input, sizeSelector, dotStyle, darkColor, lightColor, logoSizeSlider, errorCorrection]
+      .forEach(el => el.addEventListener("input", updateQRCode));
+    logoShape.addEventListener("change", applyLogoMask);
+    logoInput.addEventListener("change", e => {
+      const file = e.target.files[0];
+      if (file) {
+        const r = new FileReader();
+        r.onload = ev => { logoImage = ev.target.result; applyLogoMask(); };
+        r.readAsDataURL(file);
+      }
+    });
+    document.getElementById("generate-btn").addEventListener("click", updateQRCode);
+    document.getElementById("download-png").addEventListener("click", () => qrCode.download({ extension: "png" }));
+    document.getElementById("download-svg").addEventListener("click", () => qrCode.download({ extension: "svg" }));
+
+    // Random theme
+    const randomColor = () => "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+    document.getElementById("theme-btn").addEventListener("click", () => {
+      document.body.style.background = `linear-gradient(135deg,${randomColor()},${randomColor()})`;
+      darkColor.value = randomColor(); lightColor.value = "#fff"; updateQRCode();
+    });
+
+    // Presets
+    const presets = {
+      "preset-neon": { dark: "#39ff14", light: "#000", bg: "linear-gradient(135deg,#0f0c29,#302b63,#24243e)" },
+      "preset-pastel": { dark: "#ff99cc", light: "#fdf1f1", bg: "linear-gradient(135deg,#fbc2eb,#a6c1ee)" },
+      "preset-corp": { dark: "#003366", light: "#fff", bg: "linear-gradient(135deg,#0072ff,#00c6ff)" },
+      "preset-dark": { dark: "#fff", light: "#000", bg: "linear-gradient(135deg,#000,#434343)" }
+    };
+    for (const id in presets) {
+      document.getElementById(id).addEventListener("click", () => {
+        darkColor.value = presets[id].dark; lightColor.value = presets[id].light;
+        document.body.style.background = presets[id].bg; updateQRCode();
+      });
+    }
+
+    updateQRCode();
+  </script>
+</body>
+
+</html>
