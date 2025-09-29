@@ -1,0 +1,5 @@
+# robots.txt for GitHub Pages site
+User-agent: *
+Allow: /
+
+Sitemap: https://bramha1997.github.io/freeqrcodegeneratorapp/sitemap.xml
